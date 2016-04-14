@@ -8,6 +8,7 @@ var types = require('./types')
 
 function Transaction () {
   this.version = 1
+  this.txtime = 0
   this.locktime = 0
   this.ins = []
   this.outs = []
@@ -50,6 +51,7 @@ Transaction.fromBuffer = function (buffer, __noStrict) {
 
   var tx = new Transaction()
   tx.version = readUInt32()
+  tx.txtime = readUInt32()
 
   var vinLen = readVarInt()
   for (var i = 0; i < vinLen; ++i) {
@@ -128,7 +130,7 @@ Transaction.prototype.byteLength = function () {
   }
 
   return (
-    8 +
+    4 + 4 + 4 +
     bufferutils.varIntSize(this.ins.length) +
     bufferutils.varIntSize(this.outs.length) +
     this.ins.reduce(function (sum, input) { return sum + 40 + scriptSize(input.script) }, 0) +
@@ -140,6 +142,7 @@ Transaction.prototype.clone = function () {
   var newTx = new Transaction()
   newTx.version = this.version
   newTx.locktime = this.locktime
+  newTx.txtime = this.txtime
 
   newTx.ins = this.ins.map(function (txIn) {
     return {
@@ -276,6 +279,7 @@ Transaction.prototype.toBuffer = function () {
   }
 
   writeUInt32(this.version)
+  writeUInt32(this.txtime)
   writeVarInt(this.ins.length)
 
   this.ins.forEach(function (txIn) {

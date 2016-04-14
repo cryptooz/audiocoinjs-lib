@@ -142,7 +142,7 @@ function TransactionBuilder (network) {
   this.prevTxMap = {}
   this.prevOutScripts = {}
   this.prevOutTypes = {}
-  this.network = network || networks.bitcoin
+  this.network = network || networks.peercoin
 
   this.inputs = []
   this.tx = new Transaction()
@@ -163,12 +163,19 @@ TransactionBuilder.prototype.setLockTime = function (locktime) {
   this.tx.locktime = locktime
 }
 
+TransactionBuilder.prototype.setTxTime = function (txtime) {
+  typeforce(types.UInt32, txtime)
+
+  this.tx.txtime = txtime
+}
+
 TransactionBuilder.fromTransaction = function (transaction, network) {
   var txb = new TransactionBuilder(network)
 
   // Copy other transaction fields
   txb.tx.version = transaction.version
   txb.tx.locktime = transaction.locktime
+  txb.tx.txtime = transaction.txtime
 
   // Extract/add inputs
   transaction.ins.forEach(function (txIn) {

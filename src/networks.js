@@ -23,27 +23,16 @@ module.exports = {
     scriptHash: 0xc4,
     wif: 0xef,
     dustThreshold: 546
-  },
-  litecoin: {
-    messagePrefix: '\x19Litecoin Signed Message:\n',
+  }, 
+  peercoin: {
+    messagePrefix: '\x19Peercoin Signed Message:\n',
     bip32: {
-      public: 0x019da462,
-      private: 0x019d9cfe
+      public: 0x0488b21e,
+      private: 0x0488ade4 // ??
     },
-    pubKeyHash: 0x30,
+    pubKeyHash: 0x37,
     scriptHash: 0x05,
-    wif: 0xb0,
-    dustThreshold: 0 // https://github.com/litecoin-project/litecoin/blob/v0.8.7.2/src/main.cpp#L360-L365
-  },
-  dogecoin: {
-    messagePrefix: '\x19Dogecoin Signed Message:\n',
-    bip32: {
-      public: 0x02facafd,
-      private: 0x02fac398
-    },
-    pubKeyHash: 0x1e,
-    scriptHash: 0x16,
-    wif: 0x9e,
-    dustThreshold: 0 // https://github.com/dogecoin/dogecoin/blob/v1.7.1/src/core.h#L155-L160
+    wif: 0xb7,
+    dustThreshold: 0 // To limit dust spam, require MIN_TX_FEE/MIN_RELAY_TX_FEE if any output is less than 0.01
   }
 }

@@ -1,35 +1,13 @@
 {
-  "name": "bitcoinjs-lib",
+  "name": "peercoinjs-lib",
   "version": "2.2.0",
-  "description": "Client-side Bitcoin JavaScript library",
+  "description": "Client-side Peercoin JavaScript library",
   "main": "./src/index.js",
   "keywords": [
     "bitcoin",
     "browser",
     "client",
     "library"
-  ],
-  "contributors": [
-    {
-      "name": "Daniel Cousens",
-      "email": "bitcoin@dcousens.com",
-      "url": "http://dcousens.com"
-    },
-    {
-      "name": "Kyle Drake",
-      "email": "kyle@kyledrake.net",
-      "url": "http://kyledrake.net/"
-    },
-    {
-      "name": "Wei Lu",
-      "email": "luwei.here@gmail.com",
-      "url": "http://weilu.github.io/"
-    },
-    {
-      "name": "Stefan Thomas",
-      "email": "justmoon@members.fsf.org",
-      "url": "http://www.justmoon.net"
-    }
   ],
   "scripts": {
     "coverage": "mocha --require blanket -R travis-cov",
