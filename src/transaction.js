@@ -8,7 +8,7 @@ var types = require('./types')
 
 function Transaction () {
   this.version = 1
-  this.txtime = 0
+  this.txtime = Math.round((new Date()).getTime() / 1000)
   this.locktime = 0
   this.ins = []
   this.outs = []
