@@ -8,46 +8,11 @@ Used by over a million wallet users and the backbone for almost all Bitcoin web 
 
 - Clean: Pure JavaScript, concise code, easy to read.
 
-## Should I use this in production?
-
-If you are thinking of using the master branch of this library in production, *stop*.
-Master is not stable; it is our development branch, and only tagged releases may be classified as stable.
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-## Installation
-
-`npm install bitcoinjs-lib`
-
-
 ## Setup
 
 ### Node.js
 
-    var bitcoin = require('bitcoinjs-lib')
+    var peercoin = require('peercoinjs-lib')
 
 
 ### Browser
@@ -62,7 +27,7 @@ From your repository, create a `foobar.js` file
 ``` javascript
 var foobar = {
   base58: require('bs58'),
-  bitcoin: require('bitcoinjs-lib'),
+  bitcoin: require('peercoinjs-lib'),
   ecurve: require('ecurve'),
   BigInteger: require('bigi'),
   Buffer: require('buffer')
@@ -71,8 +36,8 @@ var foobar = {
 module.exports = foobar
 ```
 
-Each of these included packages are seperate to `bitcoinjs-lib`, and must be installed separately.
-They are however used in the bitcoinjs-lib public API.
+Each of these included packages are separate to `peercoinjs-lib`, and must be installed separately.
+They are however used in the peercoinjs-lib public API.
 
 Using browserify, compile `foobar.js` for use in the browser:
 
