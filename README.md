@@ -1,4 +1,4 @@
-# PeercoinJS (bitcoinjs-lib)
+# AudiocoinJS (bitcoinjs-lib)
 
 The pure JavaScript Peercoin library for node.js and browsers.
 Used by over a million wallet users and the backbone for almost all Bitcoin web wallets in production today.
@@ -12,7 +12,7 @@ Used by over a million wallet users and the backbone for almost all Bitcoin web 
 
 ### Node.js
 
-    var peercoin = require('peercoinjs-lib')
+    var audiocoin = require('audiocoinjs-lib')
 
 
 ### Browser
